@@ -55,3 +55,29 @@ footer {
     display: block;
     margin: 0 auto;
 }
+
+#kontakt {
+  margin-top: 2em; /* Add some space above the section */
+  padding: 1em;
+  background-color: #f9f9f9; /* Slightly different background to distinguish it */
+  border-top: 1px solid #eee; /* A subtle separator line */
+}
+
+#kontakt h2 {
+  margin-top: 0; /* Remove default top margin from h2 if any, as section has margin-top */
+  color: #333;
+}
+
+#kontakt p {
+  margin-bottom: 0.5em; /* Space between contact detail lines */
+  line-height: 1.6; /* Improve readability */
+}
+
+#kontakt a {
+  color: #007bff; /* Standard link color, or choose one that fits */
+  text-decoration: none;
+}
+
+#kontakt a:hover {
+  text-decoration: underline;
+}
