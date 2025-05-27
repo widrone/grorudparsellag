@@ -3,110 +3,147 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F5ECCD; /* Light beige/cream background */
+    color: #3D403A; /* Dark green-gray text */
+    line-height: 1.6; /* Added for better readability */
+}
+
+h1, h2, h3, h4, h5, h6 { /* Apply to all heading levels for consistency */
+    font-family: 'Nunito', sans-serif; /* Added Nunito */
+    /* Specific heading color will be handled by section or header h1 */
 }
 
 header {
-    background-color: #f0f0f0;
-    padding: 1em;
+    background-color: #D4EADF; /* Very light green */
+    padding: 1.5em 1em; /* Slightly increased padding */
     text-align: center;
+    /* Add a subtle bottom border if desired, e.g., border-bottom: 1px solid #A8D8B9; */
+}
+
+/* If there's an H1 in the header, style it */
+header h1 { /* Assuming the main site title is an H1 in the header */
+    margin: 0;
+    color: #3D403A; /* Or a darker shade of green */
+    font-size: 2.2em; /* Example size */
+}
+
+/* Navigation Styling */
+nav {
+    background-color: #A8D8B9; /* Soft minty green for nav background */
+    padding: 0.5em 0; /* Adjusted padding */
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0.5em 0; /* Adjusted padding */
     text-align: center;
+    margin: 0;
 }
 
 nav li {
     display: inline-block;
-    margin-right: 20px;
+    margin: 0 10px; /* Adjusted margin */
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #3D403A; /* Dark text on the green nav */
+    padding: 0.5em 1em; /* Padding for clickable area */
+    border-radius: 4px; /* Slightly rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
+nav a:hover, nav a:focus { /* Added focus for accessibility */
+    background-color: #BCE2C9; /* Slightly lighter green on hover */
+    color: #3D403A;
+}
+
+/* Main Content Area */
 main {
-    padding: 1em;
+    padding: 1.5em 1em; /* Increased padding */
 }
 
+/* Footer Styling */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #3D403A; /* Dark green-gray footer */
+    color: #F5ECCD; /* Light beige/cream text on footer */
     text-align: center;
-    padding: 1em 0;
+    padding: 1.5em 0; /* Increased padding */
+    margin-top: 2em; /* Space above footer */
 }
 
+/* Update media query styles if needed, for now, the color changes are global */
+/* For example, ensure nav li stacking on mobile still looks good with new padding/margins */
 @media screen and (max-width: 600px) {
     nav li {
         display: block;
-        margin-bottom: 10px;
-        margin-right: 0;
+        margin: 0.5em 0; /* Adjusted margin for stacked items */
+    }
+    nav a {
+        display: block; /* Make links full width for easier tapping */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Adjust heading size for mobile */
     }
 }
 
+/* Specific Section Styling (Kontakt, Location-Info) */
+#kontakt, #location-info {
+    margin-top: 2em;
+    padding: 1.5em; /* Increased padding */
+    background-color: #FFFFFF; /* White background for content sections to stand out */
+    border: 1px solid #D4EADF; /* Light green border */
+    border-radius: 8px; /* Rounded corners for sections */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+#kontakt h2, #location-info h2 {
+    margin-top: 0;
+    color: #5E8C6A; /* Richer green for section titles */
+    border-bottom: 2px solid #A8D8B9; /* Accent line under heading */
+    padding-bottom: 0.3em;
+    margin-bottom: 0.75em; /* Space below heading */
+}
+
+#kontakt p, #location-info p {
+    margin-bottom: 0.75em; /* Adjusted paragraph spacing */
+    /* line-height is inherited from body */
+}
+
+/* Link styling within sections */
+#kontakt a, #location-info a { /* General links within these sections */
+    color: #5E8C6A; /* Richer green for links */
+    text-decoration: underline; /* Underline for clarity */
+}
+
+#kontakt a:hover, #location-info a:hover {
+    color: #3D403A; /* Darker on hover */
+    text-decoration: none; /* Optional: remove underline on hover */
+}
+
+/* Responsive image - no color changes needed, but ensure it's still good */
 .responsive-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 1.5em auto; /* Increased margin */
+    border-radius: 8px; /* Rounded corners for image */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for image */
 }
 
-#kontakt {
-  margin-top: 2em; /* Add some space above the section */
-  padding: 1em;
-  background-color: #f9f9f9; /* Slightly different background to distinguish it */
-  border-top: 1px solid #eee; /* A subtle separator line */
-}
-
-#kontakt h2 {
-  margin-top: 0; /* Remove default top margin from h2 if any, as section has margin-top */
-  color: #333;
-}
-
-#kontakt p {
-  margin-bottom: 0.5em; /* Space between contact detail lines */
-  line-height: 1.6; /* Improve readability */
-}
-
-#kontakt a {
-  color: #007bff; /* Standard link color, or choose one that fits */
-  text-decoration: none;
-}
-
-#kontakt a:hover {
-  text-decoration: underline;
-}
-
-/* Style for the location info section */
-#location-info {
-  margin-top: 1em; /* Or consistent with #kontakt styling */
-  padding: 1em;
-  /* background-color: #f9f9f9; /* Optional: if you want similar bg as kontakt */
-  /* border-top: 1px solid #eee; /* Optional: if you want similar border as kontakt */
-}
-
-#location-info h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-#location-info p {
-  margin-bottom: 1em;
-  line-height: 1.6;
-}
-
-/* Responsive iframe container */
+/* Iframe container - no color changes needed */
 .iframe-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  margin-bottom: 1em; /* Space below the iframe */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  margin-bottom: 1em;
+  border-radius: 8px; /* Rounded corners for iframe container */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 .iframe-container iframe {
